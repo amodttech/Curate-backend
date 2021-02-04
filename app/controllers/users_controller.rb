@@ -19,19 +19,21 @@ class UsersController < ApplicationController
         if user
             render json: {error: "Sorry, but #{user.username} already exists"}
         else
-            user = user.create(user_params)
+            new_user = User.create(user_params)
+            render json: new_user
         end
-        render json: user
+        
     end
 
     def update
         user = User.find_by(id: params[:id])
         if user
             user.update(user_params)
+            render json: user
         else
             render json: {error: "Sorry, User does not exist"}
         end
-        render json: user
+        
     end
 
     def destroy
