@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem "active_model_serializers", "~> 0.10.12"
 
+gem 'rack-cors'
+
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 # Use Active Storage variant
