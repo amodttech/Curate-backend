@@ -15,7 +15,13 @@ class UsersController < ApplicationController
     end
 
     def create
-
+        user = User.find_by(username: params[:username])
+        if user
+            render json: {error: "Sorry, but #{user.username} already exists"}
+        else
+            user = user.create(user_params)
+        end
+        render json: user
     end
 
     def update
@@ -29,7 +35,12 @@ class UsersController < ApplicationController
     end
 
     def destroy
-
+        user = User.find_by(id: params[:id])
+        if user
+            user.destroy
+        else
+            render json: {error: "Sorry, User does not exist"}
+        end
     end
 
     def login
