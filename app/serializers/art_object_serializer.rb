@@ -1,3 +1,3 @@
 class ArtObjectSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :met_id, :title, :artist, :date, :origin, :image, :description
 end
