@@ -16,7 +16,7 @@ class ArtObjectsController < ApplicationController
     def create
         art_object = ArtObject.find_by(met_id: params[:met_id])
         if art_object
-            render json: {error: "Sorry, but #{art_object.met_id} already exists"}
+            render json: art_object
         else
             new_art_object = ArtObject.create(art_object_params)
             render json: new_art_object
