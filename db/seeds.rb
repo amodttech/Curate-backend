@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
+
 
 User.destroy_all
 Exhibition.destroy_all
@@ -15,20 +15,22 @@ ArtObject.destroy_all
 puts "all records have been destroyed"
 
 
-aaron = User.create(username: "A-Tron", password: "a", display_name: "Aaron", bio: "Art Robot")
+aaron = User.create(username: "Aaron", password: "a", display_name: "A-Tron", bio: "weird stuff always")
+roy = User.create(username: "Roy", password: "a", display_name: "Roy-Toy", bio: "Hot and dangerous")
 
 puts "created user: Aaron"
+puts "created user: Roy"
 
-butts = Exhibition.create(user_id: aaron.id, name: "Famous Butts", description: "The eternal subject", theme: "dark")
+exhibit_1 = Exhibition.create(user_id: aaron.id, name: "Famous Butts", description: "Nothing Butt the Hits!", theme: "dark")
+exhibit_2= Exhibition.create(user_id: roy.id, name: "Obscure Butts", description: "“Sorry, I’m a little behind.”", theme: "dark")
 
 puts "created exhibition: Famous Butts"
+puts "created exhibition: Obscure Butts"
 
-# 5.times do {
-#     ArtObject.create(met_id: , title: "", artist: "", date: "", origin: "", image: "", description: "")
-# }
+art_1 = ArtObject.create(met_id: 361640, title: "Sir William Butts", artist: "Wenceslaus Hollar", date: "1649", origin: "Bohemian", image: "https://images.metmuseum.org/CRDImages/dp/original/DP823759.jpg", description: "")
+art_2 = ArtObject.create(met_id: 361633, title: "Lady Mary Butts", artist: "Wenceslaus Hollar", date: "1649", origin: "Bohemian", image: "https://images.metmuseum.org/CRDImages/dp/original/DP823762.jpg", description: "")
 
-# order_nums = [1, 2, 3, 4, 5]
+puts "created two Butts"
 
-# 5.times do {
-#     ExhibitionObject.create(art_object_id: ArtObject.all.sample(), )
-# }
+ExhibitionObject.create(art_object_id: art_1.id, exhibition_id: exhibit_2.id, order_number: nil)
+ExhibitionObject.create(art_object_id: art_2.id, exhibition_id: exhibit_2.id, order_number: nil)

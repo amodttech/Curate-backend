@@ -14,13 +14,13 @@ class ExhibitionObjectsController < ApplicationController
     end
 
     def create
-        # exhibition_object = ExhibitionObject.find_by(art_object_id: params[:art_object_id])
-        # if exhibition_object
-        #     render json: {error: "Sorry, but #{exhibition_object.art_object_id} already exists"}
-        # else
-            new_exhibition_object = ExhibitionObject.create(exhibition_object_params)
+        exhibition_object = ExhibitionObject.find_by(art_object_id: params[:art_object_id], exhibition_id: params[:exhibition_id])
+        if exhibition_object
+            render json: exhibition_object
+        else
+            new_exhibition_object = ExhibitionObject.create!(exhibition_object_params)
             render json: new_exhibition_object
-        # end
+        end
     end
 
     def update
