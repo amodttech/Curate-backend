@@ -45,6 +45,6 @@ class ArtObjectsController < ApplicationController
     private
 
     def art_object_params
-        params.permit(:met_id, :title, :artist, :date, :origin, :image, :description)
+        params.permit(:met_id, :title, :artist, :date, :origin, :image)
     end
 end

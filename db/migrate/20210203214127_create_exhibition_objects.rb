@@ -4,6 +4,7 @@ class CreateExhibitionObjects < ActiveRecord::Migration[6.1]
       t.references :art_object, null: false, foreign_key: true
       t.references :exhibition, null: false, foreign_key: true
       t.integer :order_number
+      t.string :description
 
       t.timestamps
     end

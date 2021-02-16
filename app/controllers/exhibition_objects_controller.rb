@@ -45,6 +45,6 @@ class ExhibitionObjectsController < ApplicationController
     private
 
     def exhibition_object_params
-        params.permit(:art_object_id, :exhibition_id, :order_number)
+        params.permit(:art_object_id, :exhibition_id, :order_number, :description)
     end
 end

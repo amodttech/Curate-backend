@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_214127) do
+ActiveRecord::Schema.define(version: 2021_02_14_195057) do
 
   create_table "art_objects", force: :cascade do |t|
     t.integer "met_id"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2021_02_03_214127) do
     t.string "date"
     t.string "origin"
     t.string "image"
-    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -30,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_214127) do
     t.integer "order_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "description"
     t.index ["art_object_id"], name: "index_exhibition_objects_on_art_object_id"
     t.index ["exhibition_id"], name: "index_exhibition_objects_on_exhibition_id"
   end
