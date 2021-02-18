@@ -15,7 +15,7 @@ ArtObject.destroy_all
 puts "all records have been destroyed"
 
 
-aaron = User.create!(username: "Aaron", password: "a", display_name: "A-Tron", bio: "weird stuff always")
+aaron = User.create!(username: "Aaron", password: "a", display_name: "A-Tron", bio: "Weird Stuff Always")
 roy = User.create!(username: "Roy", password: "a", display_name: "Roy-Toy", bio: "Hot and dangerous")
 
 puts "created user: Aaron"
