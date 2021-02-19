@@ -1,24 +1,8 @@
-# README
+CURATE is an application that allows users to search the MET Museum's open archive and make their own exhibitions with over 500,000 pieces of art from across human history.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the final project for my software engineering bootcamp at Flatiron School.  February 2021.
+It was built with a Rails backend, a React Frontend, and the MET Open Acress API.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Curate Screenshot](./Curate_Screenshot.png)
