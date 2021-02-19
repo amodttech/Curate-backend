@@ -47,6 +47,6 @@ class ExhibitionsController < ApplicationController
     private
 
     def exhibition_params
-        params.permit(:user_id, :name, :description, :theme)
+        params.permit(:user_id, :name, :description, :theme, :_destroy)
     end
 end
