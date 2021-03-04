@@ -46,8 +46,12 @@ class UsersController < ApplicationController
     end
 
     def login
-        user = User.first
-        render json: user
+        user = User.find_by(username: params[:username])
+        if user
+            render json: user
+        else
+            render json: {status: "error", code: 3000, message: "User Does Not Exist"}
+        end
     end
 
     private

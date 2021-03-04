@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_14_195057) do
+ActiveRecord::Schema.define(version: 2021_02_03_214127) do
 
   create_table "art_objects", force: :cascade do |t|
     t.integer "met_id"
@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 2021_02_14_195057) do
     t.integer "art_object_id", null: false
     t.integer "exhibition_id", null: false
     t.integer "order_number"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "description"
     t.index ["art_object_id"], name: "index_exhibition_objects_on_art_object_id"
     t.index ["exhibition_id"], name: "index_exhibition_objects_on_exhibition_id"
   end
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_02_14_195057) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.string "display_name"
     t.string "bio"
     t.datetime "created_at", precision: 6, null: false
